@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Divya Rawat | Academic Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    font-family: 'Inter', sans-serif;
+    background: #121212;
+    color: #eee;
+    scroll-behavior: smooth;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header h1 {
+    font-size: 3rem;
+    color: #00bcd4;
+    margin-bottom: 0.3rem;
+  }
+  header p {
+    font-size: 1.25rem;
+    color: #b0bec5;
+  }
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem auto 2rem auto;
+    border: 4px solid #00bcd4;
+    display: block;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: #121212;
+    z-index: 10;
+    padding: 1rem 0;
+  }
+  nav a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #4dd0e1;
+  }
+  nav a.active {
+    border-bottom: 2px solid #00bcd4;
+  }
+  section {
+    margin-bottom: 4rem;
+    background-color: #1e1e1e;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.15);
+    transition: all 0.3s ease-in-out;
+  }
+  section:hover {
+    box-shadow: 0 4px 18px rgba(0,188,212,0.3);
+  }
+  section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #00bcd4;
+    padding-bottom: 0.3rem;
+  }
+  p, ul {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cfd8dc;
+  }
+  ul {
+    list-style: inside disc;
+  }
+  figure {
+    margin: 20px 0;
+    text-align: center;
+  }
+  figure img {
+    width: 110%;
+    height: auto;
+    border-radius: 8px;
+  }
+  figure figcaption {
+    font-size: 0.85em;
+    color: #90a4ae;
+    margin-top: 6px;
+  }
+  .cv-download {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #00bcd4;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  .cv-download:hover {
+    background-color: #26c6da;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+    gap: 15px;
+  }
+  .gallery figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,188,212,0.8);
+  }
+  .gallery figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #90a4ae;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding-bottom: 2rem;
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+    nav a {
+      font-size: 1rem;
+    }
+    .gallery img {
+      height: 120px;
+    }
+    .container {
+      padding: 0 0.75rem;
+    }
+    section {
+      padding: 1rem;
+    }
+    .refereed h3 {
+      color: #2e7d32;
+    }
+    .conference h3 {
+      color: #0277bd;
+    }
+    .non-scientific h3 {
+      color: #6a1b9a;
+    }
+  }
+</style>
+</head>
+<body>
+<!-- The content remains unchanged -->
+ <div class="container">
+    <header>
+      <h1>Divya Rawat</h1>
+      <p>Postdoctoral Fellow | SSC XMM-NEWTON, Observatoire Astronomique de Strasbourg</p>
+      <img src="my_picture.jpg" alt="Your photo" class="hero-photo" />
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+
+    <section id="about">
+      <h2>About Me</h2>
+   <div style="display: flex; align-items: flex-start; gap: 20px;">
+    <figure>  
+    <img src="my_phd_degree.JPG" alt="Divya Rawat receiving degree" style="width: 250px; height: 350px; border-radius: 10px;">
+    <figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">PhD Convocation – IIT Kanpur, 2022</figcaption>
+    </figure>
+   <p>
+Hi, I am Divya Rawat. I was born and raised in the Delhi NCR region with my family roots nestled in the serene Kumaon region of Uttarakhand, India. My curiosity for the fundamental mysteries of nature blossomed during my school years into a profound passion for physics. I pursued this passion by completing a BSc in Physics at the University of Delhi (2011–2014) and an MSc at Banaras Hindu University (2014–2016), where my fascination deepened for Physics. Driven to understand the complex behavior of matter under extreme conditions, I earned my PhD at the Indian Institute of Technology Kanpur (2016–2021), focusing on accretion processes in compact objects. Following my doctorate, I contributed as a postdoctoral researcher at the AstroSat Science Support Cell at IUCAA, Pune (2021-2023), and I currently continue my research journey as a postdoctoral fellow at the Science Survey Center of the XMM-Newton project, based at the Observatoire Astronomique de Strasbourg, France.
+</p>
+   
+
+</p>
+    </div> 
+    </section>
+        <section id="publications">
+      <h2>Publications</h2>
+      
+      <div class="refereed">
+
+      <h3>Refereed</h3>
+      <ul>
+                <li>Contemporaneous X-ray and Optical Polarization of EHSP Blazar H 1426+428, 2025, <i>MNRAS</i>, 988, L50</li>
+        <li>Evolution of the Comptonizing medium of the black-hole candidate Swift J1727.8−1613 along the hard to hard-intermediate state transition using NICER, 2025, <i>A&A</i> 697, A229</li>
+        <li>Evolution of QPOs in GX 339–4 and EXO 1846–031 with Insight-HXMT and NICER, 2024, <i>ApJL</i>, 971, 2, 148</li>
+        <li>Unveiling the X-ray polarimetric properties of LMC X-3 with IXPE, NICER, and Swift/XRT, 2024, <i>MNRAS</i>, 531, 1, 585–591</li>
+        <li>Spectropolarimetric study of 4U 1630-47 in steep power-law state with IXPE and NICER, 2023, <i>MNRAS</i>, 525, 1, 661-666</li>
+        <li>Testing the dynamic origin of Quasi-periodic Oscillations in MAXI J1535-571 and H 1743-322, 2023, <i>MNRAS</i>, 524, 4, 5869-5879</li>
+        <li>Detection of X-Ray Polarized Emission and Accretion-disk Winds with IXPE and NICER in the Black Hole X-Ray Binary 4U 1630-47, 2023, <i>ApJL</i>, 949, L43</li>
+        <li>Flux-resolved Spectropolarimetric Evolution of the X-Ray Pulsar Hercules X-1 Using IXPE, 2023, <i>ApJL</i>, 948, 1</li>
+        <li>A NICER look at the jet-like corona of MAXI J1535-571 through type-B quasi-periodic oscillations, 2023, <i>MNRAS</i>, 520, 4</li>
+        <li>The comptonizing medium of the black hole X-ray binary MAXI J1535-571 through type-C quasi-periodic oscillations, 2023, <i>MNRAS</i>, 520, 1, 113–128</li>
+        <li>The evolution of the corona in MAXI J1535-571 through type-C quasi-periodic oscillations with Insight-HXMT, 2022, <i>MNRAS</i>, 512, 2, 2686-2696</li>
+        <li>Time-resolved spectroscopy on the heartbeat state of GRS 1915+105 using AstroSat, 2022, <i>MNRAS</i>, 511, 2, 1841−1847</li>
+        <li>Testing Evolution of LFQPOs with Mass Accretion Rate in GRS 1915+105 with Insight-HXMT, 2021, <i>ApJ</i>, 909, 63</li>
+        <li>Identification of QPO Frequency of GRS 1915+105 as the Relativistic Dynamic Frequency of a Truncated Accretion Disk, 2020, <i>ApJL</i>, 889L, 36</li>
+        <li>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915 + 105 Using AstroSat, 2019, <i>ApJ</i>, 870, 4</li>
+        <li>Extensive Broadband X-Ray Monitoring During the Formation of a Giant Radio Jet Base in Cyg X-3 with AstroSat, 2018, <i>ApJL</i>, 853, 11</li>
+      </ul>
+      </div>
+
+      <h3>Non-refereed / Conference Proceedings</h3>
+      <ul>
+        <li>Exploring the origin of type-C Quasi-periodic Oscillations in black hole X-ray binaries, MAXI J1535-571 and H 1743-322, COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Polarimetric Findings for the Black Hole X-ray Binary 4U 1630-47 using Imaging X-ray Polarimetry Explorer, COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Soft Spectro-polarimetry of X-ray Binaries LMC X-3 and Her X-1: IXPE Insights and Future Prospects with XpoSat, COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Study of comptonizing medium of BHXRB MAXI J1535−571 using time-dependent comptonization model, COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Corona evolution of MAXI J1535-571 revealed by type-C quasi-periodic oscillations observed with Insight-HXMT, COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Probing the heartbeat state of GRS 1915+105 with time-resolved spectroscopy using AstroSat, COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Rms-spectra study of Low-frequency QPOs in Black hole binary systems using NICER, COSPAR-2021 Assembly, Sydney, Australia</li>
+        <li>Identification of QuasiPeriodic Oscillations of a black hole system, COSPAR-2021 Assembly, Sydney, Australia</li>
+        <li>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915+105 Using AstroSat/LAXPC, COSPAR-2018 Assembly, Pasadena</li>
+      </ul>
+
+      <h3>Non-Scientific Conference Proceedings</h3>
+      <ul>
+        <li>My experience with Cospar Capacity Building and Cospar visiting fellowship, COSPAR-2021 Assembly, Sydney, Australia</li>
+      </ul>
+    </section>
+  
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>My research interests include the study of accretion disks in compact objects, the investigation of relativistic jets and their relationship with the accretion disk, accretion geometry, quasi-periodic oscillations and their connection to accretion, corona, and disk instability. I have utilized observations from X-ray observatories such as AstroSat, NICER, Swift, NuSTAR, and IXPE for my research. Additionally, I have experience with various data analysis software, including HeaSoft, LAXPC software, SXT pipeline, NICERDAS, GHATS (General High-Energy Aperiodic Timing Software), and NuSTARDAS.
+
+Currently, I am contributing to updating the code for the Xcat-DB interface, which contains all the sources in the XMM archive sources catalog, extracted from more than 200 catalogs hosted primarily at CDS ( Strasbourg Astronomical Data Center).</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+
+   
+
+      <h3>Where Research Has Taken Me</h3>
+      
+      <div class="gallery">
+      <figure>
+
+        <img src="Gsfc.jpg" alt="Visited Institute 1" />
+        <figcaption>NASA's Goddard Space Flight Center (GSFC), USA</figcaption>
+     </figure>
+     <figure>
+       <img src="caltech.jpg" alt="Visited Institute 2" />
+       <figcaption>California Institute of Technology (Caltech), USA</figcaption>
+     </figure>
+
+    <figure>
+    <img src="crete.jpg" alt="Visited Institute 3" />
+    <figcaption>Foundation for Research and Technology (FORTH), Greece</figcaption>
+    </figure>
+    </div>
+    <h3>Conferences</h3>
+      
+      <div class="gallery">
+      <figure>
+
+        <img src="Cospar2022.jpg" alt="Visited Institute 1" />
+        <figcaption>COSPAR 2022, Greece</figcaption>
+     </figure>
+     <figure>
+
+        <img src="XMM_2024.jpg" alt="XMM2ATHENA" />
+        <figcaption>XMM2ATHENA 2024, France</figcaption>
+     </figure>
+     <figure>
+
+        <img src="Vasto_group.jpg" alt="XMM2ATHENA" />
+        <figcaption>VAM 2025, Italy, France</figcaption>
+     </figure>   
+        <!-- Add more photos here -->
+      </div>
+
+     
+    </section>
+
+    
+
+    <footer>
+      &copy; 2025 Divya Rawat
+    </footer>
+  </div>
+</body>
+</html>
+
