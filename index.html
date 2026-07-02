@@ -3,360 +3,641 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Divya Rawat | Academic Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<title>Divya Rawat | X-ray Astronomer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  :root {
+    --bg: #10121a;
+    --bg-elevated: #181b27;
+    --bg-elevated-2: #1f2333;
+    --text: #eae7de;
+    --text-muted: #8d94a8;
+    --text-faint: #5c6376;
+    --gold: #c9a463;
+    --copper: #d1794a;
+    --violet: #8579d6;
+    --blue: #5b8dd6;
+    --hairline: rgba(234, 231, 222, 0.09);
+    --hairline-strong: rgba(234, 231, 222, 0.16);
+    --spectrum: linear-gradient(90deg, #6a5fc2 0%, #5b8dd6 22%, #4fb8a8 42%, #c9a463 66%, #d1794a 84%, #c2564a 100%);
   }
-  body, html {
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
     font-family: 'Inter', sans-serif;
-    background: #121212;
-    color: #eee;
-    scroll-behavior: smooth;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(133, 121, 214, 0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 90% 10%, rgba(209, 121, 74, 0.07), transparent 55%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.6;
   }
+
+  ::selection { background: var(--gold); color: #10121a; }
+
+  a { color: inherit; }
+
   .container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
-  header {
-    text-align: center;
-    margin-bottom: 3rem;
+
+  /* ---------- Spectrum rule, the signature device ---------- */
+  .spectrum-rule {
+    height: 3px;
+    border-radius: 3px;
+    background: var(--spectrum);
+    opacity: 0.9;
   }
-  header h1 {
-    font-size: 3rem;
-    color: #00bcd4;
-    margin-bottom: 0.3rem;
-  }
-  header p {
-    font-size: 1.25rem;
-    color: #b0bec5;
-  }
-  .hero-photo {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 1rem auto 2rem auto;
-    border: 4px solid #00bcd4;
-    display: block;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
+  .spectrum-rule.thin { height: 2px; opacity: 0.6; }
+
+  /* ---------- Nav ---------- */
+  .nav-wrap {
     position: sticky;
     top: 0;
-    background: #121212;
-    z-index: 10;
-    padding: 1rem 0;
+    z-index: 50;
+    background: rgba(16, 18, 26, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  nav {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
   }
   nav a {
-    color: #00bcd4;
     text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
   }
-  nav a:hover {
-    color: #4dd0e1;
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: var(--spectrum);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
-  nav a.active {
-    border-bottom: 2px solid #00bcd4;
+  nav a:hover { color: var(--text); }
+  nav a:hover::after { transform: scaleX(1); }
+
+  /* ---------- Header ---------- */
+  header {
+    padding: 4.5rem 0 3rem;
   }
-  section {
-    margin-bottom: 4rem;
-    background-color: #1e1e1e;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.15);
-    transition: all 0.3s ease-in-out;
-  }
-  section:hover {
-    box-shadow: 0 4px 18px rgba(0,188,212,0.3);
-  }
-  section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #00bcd4;
-    padding-bottom: 0.3rem;
-  }
-  p, ul {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #cfd8dc;
-  }
-  ul {
-    list-style: inside disc;
-  }
-  figure {
-    margin: 20px 0;
-    text-align: center;
-  }
-  figure img {
-    width: 110%;
-    height: auto;
-    border-radius: 8px;
-  }
-  figure figcaption {
-    font-size: 0.85em;
-    color: #90a4ae;
-    margin-top: 6px;
-  }
-  .cv-download {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #00bcd4;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-  }
-  .cv-download:hover {
-    background-color: #26c6da;
-  }
-  .gallery {
+  .header-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
-    gap: 15px;
-  }
-  .gallery figure {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 148px 1fr;
+    gap: 2.2rem;
     align-items: center;
   }
+  .photo-frame {
+    position: relative;
+    width: 148px;
+    height: 148px;
+  }
+  .photo-frame img {
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    filter: grayscale(15%) contrast(1.02);
+  }
+  .photo-frame::before,
+  .photo-frame::after,
+  .corner-tl, .corner-br {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+  }
+  .corner-tl { top: -6px; left: -6px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+  .corner-br { bottom: -6px; right: -6px; border-bottom: 2px solid var(--copper); border-right: 2px solid var(--copper); }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 2.7rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  header .role {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+    max-width: 46ch;
+  }
+  .orcid-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--hairline-strong);
+    padding: 0.35rem 0.75rem 0.35rem 0.55rem;
+    border-radius: 999px;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+  .orcid-link:hover { border-color: var(--gold); color: var(--text); }
+  .orcid-link img { width: 15px; height: 15px; border-radius: 50%; }
+
+  header .spectrum-rule { margin-top: 2.4rem; }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 3.4rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    margin-bottom: 1.8rem;
+  }
+  .section-head .eyebrow { margin-bottom: 0.3rem; }
+  section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.85rem;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  section h2 a { text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+  section h2 img.inline-icon { height: 0.95rem; opacity: 0.8; filter: invert(1) brightness(1.6); }
+
+  p { color: #c7c9d4; font-size: 1rem; }
+  .container p a, .container li a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201, 164, 99, 0.35); transition: border-color 0.2s ease, color 0.2s ease; }
+  .container p a:hover, .container li a:hover { color: #ddbf85; border-color: var(--gold); }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .about-grid figure { margin: 0; }
+  .about-grid figure img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--hairline-strong);
+  }
+  .about-grid figcaption {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--text-faint);
+    margin-top: 0.6rem;
+    text-align: center;
+  }
+  .about-grid p::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 3.1rem;
+    font-weight: 500;
+    color: var(--gold);
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.12em;
+    padding-top: 0.1em;
+  }
+
+  /* ---------- Publications ---------- */
+  .pub-group { margin-bottom: 2.2rem; }
+  .pub-group:last-child { margin-bottom: 0; }
+  .pub-group h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .pub-group.featured h3 { color: var(--gold); }
+
+  ul.pub-list { list-style: none; }
+  ul.pub-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px dashed var(--hairline);
+    font-size: 0.97rem;
+    color: #c7c9d4;
+    line-height: 1.55;
+  }
+  ul.pub-list li:last-child { border-bottom: none; }
+  ul.pub-list .year-tag {
+    flex: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    padding-top: 0.15rem;
+    width: 3.2rem;
+  }
+  .pub-group.featured ul.pub-list .year-tag { color: var(--gold); }
+  .pub-group.featured ul.pub-list li {
+    background: linear-gradient(90deg, rgba(201,164,99,0.07), transparent 70%);
+    border-radius: 6px;
+    padding: 0.9rem 0.8rem;
+    border-bottom: none;
+  }
+  .badge-arxiv {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    color: var(--copper);
+    border: 1px solid rgba(209, 121, 74, 0.4);
+    border-radius: 4px;
+    padding: 0.08rem 0.4rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  ul.plain-list { list-style: none; }
+  ul.plain-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--hairline);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  ul.plain-list li:last-child { border-bottom: none; }
+
+  ul.info-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  ul.info-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.97rem;
+    color: #c7c9d4;
+    line-height: 1.6;
+  }
+  ul.info-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ---------- Projects ---------- */
+  #projects p { max-width: 68ch; }
+  #projects p + p { margin-top: 1rem; }
+  .content-block { margin-bottom: 2.2rem; }
+  .content-block:last-child { margin-bottom: 0; }
+  .content-block h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin: 2rem 0 1rem;
+  }
+  .gallery-sub:first-of-type { margin-top: 0; }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .gallery figure {
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--hairline-strong);
+    background: var(--bg-elevated);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .gallery figure:hover { transform: translateY(-3px); border-color: var(--gold); }
   .gallery img {
     width: 100%;
     height: 140px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,188,212,0.8);
+    display: block;
   }
   .gallery figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    color: #90a4ae;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding: 0.6rem 0.75rem 0.8rem;
   }
+
+  /* ---------- Media appearances ---------- */
+  .media-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .media-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 8px;
+    font-size: 0.92rem;
+    text-decoration: none;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--hairline-strong) !important;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .media-list li a:hover { border-color: var(--gold) !important; background: rgba(201,164,99,0.06); }
+  .media-list li a::before {
+    content: "▸";
+    color: var(--copper);
+    font-size: 0.8rem;
+  }
+
+  /* ---------- Footer ---------- */
   footer {
     text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    padding-bottom: 2rem;
+    padding: 2.8rem 0 3rem;
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    font-family: 'Space Mono', monospace;
   }
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.2rem;
-    }
-    nav a {
-      font-size: 1rem;
-    }
-    .gallery img {
-      height: 120px;
-    }
-    .container {
-      padding: 0 0.75rem;
-    }
-    section {
-      padding: 1rem;
-    }
-    .refereed h3 {
-      color: #2e7d32;
-    }
-    .conference h3 {
-      color: #0277bd;
-    }
-    .non-scientific h3 {
-      color: #6a1b9a;
-    }
+
+  @media (max-width: 620px) {
+    header { padding: 3rem 0 2rem; }
+    .header-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    header h1 { font-size: 2.1rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-grid figure { max-width: 220px; margin: 0 auto; }
+    .about-grid p::first-letter { font-size: 2.3rem; }
+    section { padding: 2.4rem 0; }
+    nav { gap: 1.1rem 1.4rem; padding: 0.85rem 1rem; }
   }
 </style>
 </head>
 <body>
-<!-- The content remains unchanged -->
- <div class="container">
-    <header>
-      <h1>Divya Rawat</h1>
-      <p>Postdoctoral Fellow | SSC XMM-NEWTON, Observatoire Astronomique de Strasbourg</p>
-      <p>
-      <a href="https://orcid.org/0000-0002-9280-2785" target="_blank" style="color: #00bcd4; text-decoration: none;">
-      <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD icon" style="vertical-align: middle; margin-right: 6px;">
-      ORCID: 0000-0002-9280-2785
-      </a>
-      </p>
-      <img src="my_picture.jpg" alt="Your photo" class="hero-photo" />
-    </header>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#appearances">Appearances in Popular Media</a>
-    </nav>
+<div class="nav-wrap">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#collaborations">Collaborations</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#appearances">In the Media</a>
+  </nav>
+</div>
 
-    <section id="about">
-      <h2>About Me</h2>
-   <div style="display: flex; align-items: flex-start; gap: 20px;">
-    <figure>  
-    <img src="cospar_my.jpg" alt="Divya Rawat receiving degree" style="width: 250px; height: 350px; border-radius: 10px;">
-    <figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">COSPAR-2022, Greece</figcaption>
-    </figure>
-   <p>
-Hi, I am Divya Rawat, originally from the Delhi NCR region, with family roots in the Kumaon hills of Uttarakhand, India. My interest in fundamental questions about nature began during school and gradually evolved into a strong passion for physics. I completed a BSc in Physics at the University of Delhi (2011–2014) and an MSc at Banaras Hindu University (2014–2016), where I developed a deeper interest in high-energy astrophysics. I pursued a PhD at the Indian Institute of Technology Kanpur (2016–2021), focusing on accretion processes in compact objects. Afterward, I worked as a postdoctoral researcher at the AstroSat Science Support Cell, IUCAA Pune (2021–2023), where I organized national workshops, delivered webinars, developed data analysis tutorials, and supported the broader community of AstroSat users. I am currently a postdoctoral fellow at the Science Survey Center of the XMM-Newton project at the Observatoire Astronomique de Strasbourg, France.
-</p>
-   
+<div class="container">
 
-</p>
-    </div> 
-    </section>
-        <section id="publications">
-      <h2>
-  <a href="https://ui.adsabs.harvard.edu/public-libraries/w9UOQ0K_REWn9qjnunvd1g" target="_blank" style="color: #79c0ff; text-decoration: none;">
-    Publications
-    <img src="https://ui.adsabs.harvard.edu/favicon.ico" alt="ADS icon" style="height: 1rem; vertical-align: middle; margin-left: 6px;" />
-  </a>
-</h2>
-      
-      <div class="refereed">
-
-      <h3>Refereed</h3>
-      <ul>
-         <li>Contemporaneous X-ray and Optical Polarization of EHSP Blazar H 1426+428, 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...988L..50B/abstract" target="_blank"> <i>ApJL</i>, 988, L50</a> </li>
-         <li>Evolution of the Comptonizing medium of the black-hole candidate Swift J1727.8−1613 along the hard to hard-intermediate state transition using NICER, 2025, <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...697A.229R/abstract" target="_blank"> <i>A&A</i>, 697, A229 </a> </li>
-        <li>Evolution of QPOs in GX 339–4 and EXO 1846–031 with Insight-HXMT and NICER, 2024, <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...971..148Z/abstract" target="_blank"> <i>ApJL</i>, 971, 2, 148</a> </li>
-        <li>Unveiling the X-ray polarimetric properties of LMC X-3 with IXPE, NICER, and Swift/XRT, 2024,<a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531..585G/abstract" target="_blank"> <i>MNRAS</i>, 531, 1, 585–591</a></li>
-        <li>Spectropolarimetric study of 4U 1630-47 in steep power-law state with IXPE and NICER, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.525..661R/abstract" target="_blank"><i>MNRAS</i>, 525, 1, 661-666</a></li>
-        <li>Testing the dynamic origin of Quasi-periodic Oscillations in MAXI J1535-571 and H 1743-322, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.5869R/abstract" target="_blank"><i>MNRAS</i>, 524, 4, 5869-5879</a></li>
-        <li>Detection of X-Ray Polarized Emission and Accretion-disk Winds with IXPE and NICER in the Black Hole X-Ray Binary 4U 1630-47, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...949L..43R/abstract" target="_blank"><i>ApJL</i>, 949, L43</a></li>
-        <li>Flux-resolved Spectropolarimetric Evolution of the X-Ray Pulsar Hercules X-1 Using IXPE, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...948L..10G/abstract" target="_blank"><i>ApJL</i>, 948, 1</a></li>
-        <li>A NICER look at the jet-like corona of MAXI J1535-571 through type-B quasi-periodic oscillations, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520.5144Z/abstract" target="_blank"><i>MNRAS</i>, 520, 4</a></li>
-        <li>The comptonizing medium of the black hole X-ray binary MAXI J1535-571 through type-C quasi-periodic oscillations, 2023, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520..113R/abstract " target="_blank"><i>MNRAS</i>, 520, 1, 113–128</a></li>
-        <li>The evolution of the corona in MAXI J1535-571 through type-C quasi-periodic oscillations with Insight-HXMT, 2022,<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.2686Z/abstract" target="_blank"><i>MNRAS</i>, 512, 2, 2686-2696</a></li>
-        <li>Time-resolved spectroscopy on the heartbeat state of GRS 1915+105 using AstroSat, 2022, <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.511.1841R/abstract " target="_blank"><i>MNRAS</i>, 511, 2, 1841−1847</a></li>
-        <li>Testing Evolution of LFQPOs with Mass Accretion Rate in GRS 1915+105 with Insight-HXMT, 2021, <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...909...63L/abstract " target="_blank"><i>ApJ</i>, 909, 63</a></li>
-        <li>Identification of QPO Frequency of GRS 1915+105 as the Relativistic Dynamic Frequency of a Truncated Accretion Disk, 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889L..36M/abstract " target="_blank"><i>ApJL</i>, 889L, 36</a></li>
-        <li>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915 + 105 Using AstroSat, 2019, <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...870....4R/abstract " target="_blank"><i>ApJ</i>, 870, 4</a></li>
-        <li>Extensive Broadband X-Ray Monitoring During the Formation of a Giant Radio Jet Base in Cyg X-3 with AstroSat, 2018, <a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...853L..11P/abstract" target="_blank"><i>ApJL</i>, 853, 11</a></li>
-      </ul>
+  <header>
+    <div class="header-grid">
+      <div class="photo-frame">
+        <span class="corner-tl"></span>
+        <img src="my_picture.jpg" alt="Divya Rawat" />
+        <span class="corner-br"></span>
       </div>
-
-      <h3>Non-refereed / Conference Proceedings</h3>
-      <ul>
-        <li>Exploring the origin of type-C Quasi-periodic Oscillations in black hole X-ray binaries, MAXI J1535-571 and H 1743-322, COSPAR-2024 Assembly, Busan, South Korea</li>
-        <li>Polarimetric Findings for the Black Hole X-ray Binary 4U 1630-47 using Imaging X-ray Polarimetry Explorer, COSPAR-2024 Assembly, Busan, South Korea</li>
-        <li>Soft Spectro-polarimetry of X-ray Binaries LMC X-3 and Her X-1: IXPE Insights and Future Prospects with XpoSat, COSPAR-2024 Assembly, Busan, South Korea</li>
-        <li>Study of comptonizing medium of BHXRB MAXI J1535−571 using time-dependent comptonization model, COSPAR-2022 Assembly, Athens, Greece</li>
-        <li>Corona evolution of MAXI J1535-571 revealed by type-C quasi-periodic oscillations observed with Insight-HXMT, COSPAR-2022 Assembly, Athens, Greece</li>
-        <li>Probing the heartbeat state of GRS 1915+105 with time-resolved spectroscopy using AstroSat, COSPAR-2022 Assembly, Athens, Greece</li>
-        <li>Rms-spectra study of Low-frequency QPOs in Black hole binary systems using NICER, COSPAR-2021 Assembly, Sydney, Australia</li>
-        <li>Identification of QuasiPeriodic Oscillations of a black hole system, COSPAR-2021 Assembly, Sydney, Australia</li>
-        <li>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915+105 Using AstroSat/LAXPC, COSPAR-2018 Assembly, Pasadena</li>
-      </ul>
-
-      <h3>Non-Scientific Conference Proceedings</h3>
-      <ul>
-        <li>My experience with Cospar Capacity Building and Cospar visiting fellowship, COSPAR-2021 Assembly, Sydney, Australia</li>
-      </ul>
-    </section>
-  
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>My research interests include the study of accretion disks in compact objects, the investigation of relativistic jets and their relationship with the accretion disk, accretion geometry, quasi-periodic oscillations and their connection to accretion, corona, and disk instability. I have utilized observations from X-ray observatories such as AstroSat, NICER, Swift, NuSTAR, and IXPE for my research. Additionally, I have experience with various data analysis software, including HeaSoft, LAXPC software, SXT pipeline, NICERDAS, GHATS (General High-Energy Aperiodic Timing Software), and NuSTARDAS.
-
-Currently, I am contributing to updating the code for the Xcat-DB interface, which contains all the sources in the XMM archive sources catalog, extracted from more than 200 catalogs hosted primarily at CDS (Strasbourg Astronomical Data Center).</p>
-    </section>
-
-    <section id="gallery">
-      <h2>Gallery</h2>
-
-   
-
-      <h3>Where Research Has Taken Me</h3>
-      
-      <div class="gallery">
-      <figure>
-
-        <img src="Gsfc.jpg" alt="Visited Institute 1" />
-        <figcaption>NASA's Goddard Space Flight Center (GSFC), USA</figcaption>
-     </figure>
-     <figure>
-       <img src="caltech.jpg" alt="Visited Institute 2" />
-       <figcaption>California Institute of Technology (Caltech), USA</figcaption>
-     </figure>
-   
-    <figure>
-    <img src="crete.jpg" alt="Visited Institute 3" />
-    <figcaption>Foundation for Research and Technology (FORTH), Greece</figcaption>
-    </figure>
+      <div>
+        <div class="eyebrow">X-ray Astronomer · High-Energy Astrophysics</div>
+        <h1>Divya Rawat</h1>
+        <p class="role">Postdoctoral Fellow, SSC XMM-Newton &mdash; Observatoire Astronomique de Strasbourg</p>
+        <a class="orcid-link" href="https://orcid.org/0000-0002-9280-2785" target="_blank">
+          <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD icon">
+          0000-0002-9280-2785
+        </a>
+      </div>
     </div>
-    <h3>Conferences</h3>
-      
-      <div class="gallery">
+    <div class="spectrum-rule"></div>
+  </header>
+
+  <section id="about">
+    <div class="section-head">
+      <div class="eyebrow">Biography</div>
+      <h2>About Me</h2>
+    </div>
+    <div class="about-grid">
       <figure>
+        <img src="cospar_my.jpg" alt="Divya Rawat receiving degree">
+        <figcaption>COSPAR&nbsp;2022, Greece</figcaption>
+      </figure>
+      <p>
+        Hi, I am Divya Rawat, originally from the Delhi NCR region, with family roots in the Kumaon hills of Uttarakhand, India. My interest in fundamental questions about nature began during school and gradually evolved into a strong passion for physics. I completed a BSc in Physics at the University of Delhi (2011&ndash;2014) and an MSc at Banaras Hindu University (2014&ndash;2016), where I developed a deeper interest in high-energy astrophysics. I pursued a PhD at the Indian Institute of Technology Kanpur (2016&ndash;2021), focusing on accretion processes in compact objects. Afterward, I worked as a postdoctoral researcher at the AstroSat Science Support Cell, IUCAA Pune (2021&ndash;2023), where I organized national workshops, delivered webinars, developed data analysis tutorials, and supported the broader community of AstroSat users. I am currently a postdoctoral fellow at the Science Survey Center of the XMM-Newton project at the Observatoire Astronomique de Strasbourg, France.
+      </p>
+    </div>
+  </section>
 
-        <img src="Cospar2022.jpg" alt="Visited Institute 1" />
+  <section id="publications">
+    <div class="section-head">
+      <div class="eyebrow">Research Output</div>
+      <h2>
+        <a href="https://ui.adsabs.harvard.edu/public-libraries/w9UOQ0K_REWn9qjnunvd1g" target="_blank">
+          Publications
+          <img class="inline-icon" src="https://ui.adsabs.harvard.edu/favicon.ico" alt="ADS icon" />
+        </a>
+      </h2>
+    </div>
+
+    <div class="pub-group featured">
+      <h3>Latest Preprint</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="year-tag">2026</span>
+          <span>Early results from the SVOM Observatory Science program, A. Coleiro, L. Tao, F. Cangemi, et al., <i>RAA</i>, <a href="https://doi.org/10.48550/arXiv.2607.01091" target="_blank">doi:10.48550/arXiv.2607.01091</a><span class="badge-arxiv">arXiv</span></span>
+        </li>
+        <li>
+          <span class="year-tag">2026</span>
+          <span>The XMM-Newton serendipitous survey. XI. The fifth XMM-Newton serendipitous source catalogue &mdash; under review, <i>A&amp;A</i>, <a href="http://xmmssc.irap.omp.eu/Catalogue/5XMM-DR15/5XMMdraft.pdf" target="_blank">draft PDF</a><span class="badge-arxiv">Under review</span></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3>Refereed</h3>
+      <ul class="pub-list">
+        <li><span class="year-tag">2025</span><span>Contemporaneous X-ray and Optical Polarization of EHSP Blazar H 1426+428, <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...988L..50B/abstract" target="_blank"><i>ApJL</i>, 988, L50</a></span></li>
+        <li><span class="year-tag">2025</span><span>Evolution of the Comptonizing medium of the black-hole candidate Swift J1727.8&minus;1613 along the hard to hard-intermediate state transition using NICER, <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...697A.229R/abstract" target="_blank"><i>A&amp;A</i>, 697, A229</a></span></li>
+        <li><span class="year-tag">2024</span><span>Evolution of QPOs in GX 339&ndash;4 and EXO 1846&ndash;031 with Insight-HXMT and NICER, <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...971..148Z/abstract" target="_blank"><i>ApJL</i>, 971, 2, 148</a></span></li>
+        <li><span class="year-tag">2024</span><span>Unveiling the X-ray polarimetric properties of LMC X-3 with IXPE, NICER, and Swift/XRT, <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.531..585G/abstract" target="_blank"><i>MNRAS</i>, 531, 1, 585&ndash;591</a></span></li>
+        <li><span class="year-tag">2023</span><span>Spectropolarimetric study of 4U 1630-47 in steep power-law state with IXPE and NICER, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.525..661R/abstract" target="_blank"><i>MNRAS</i>, 525, 1, 661&ndash;666</a></span></li>
+        <li><span class="year-tag">2023</span><span>Testing the dynamic origin of Quasi-periodic Oscillations in MAXI J1535-571 and H 1743-322, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.524.5869R/abstract" target="_blank"><i>MNRAS</i>, 524, 4, 5869&ndash;5879</a></span></li>
+        <li><span class="year-tag">2023</span><span>Detection of X-Ray Polarized Emission and Accretion-disk Winds with IXPE and NICER in the Black Hole X-Ray Binary 4U 1630-47, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...949L..43R/abstract" target="_blank"><i>ApJL</i>, 949, L43</a></span></li>
+        <li><span class="year-tag">2023</span><span>Flux-resolved Spectropolarimetric Evolution of the X-Ray Pulsar Hercules X-1 Using IXPE, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...948L..10G/abstract" target="_blank"><i>ApJL</i>, 948, 1</a></span></li>
+        <li><span class="year-tag">2023</span><span>A NICER look at the jet-like corona of MAXI J1535-571 through type-B quasi-periodic oscillations, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520.5144Z/abstract" target="_blank"><i>MNRAS</i>, 520, 4</a></span></li>
+        <li><span class="year-tag">2023</span><span>The comptonizing medium of the black hole X-ray binary MAXI J1535-571 through type-C quasi-periodic oscillations, <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520..113R/abstract" target="_blank"><i>MNRAS</i>, 520, 1, 113&ndash;128</a></span></li>
+        <li><span class="year-tag">2022</span><span>The evolution of the corona in MAXI J1535-571 through type-C quasi-periodic oscillations with Insight-HXMT, <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.2686Z/abstract" target="_blank"><i>MNRAS</i>, 512, 2, 2686&ndash;2696</a></span></li>
+        <li><span class="year-tag">2022</span><span>Time-resolved spectroscopy on the heartbeat state of GRS 1915+105 using AstroSat, <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.511.1841R/abstract" target="_blank"><i>MNRAS</i>, 511, 2, 1841&minus;1847</a></span></li>
+        <li><span class="year-tag">2021</span><span>Testing Evolution of LFQPOs with Mass Accretion Rate in GRS 1915+105 with Insight-HXMT, <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...909...63L/abstract" target="_blank"><i>ApJ</i>, 909, 63</a></span></li>
+        <li><span class="year-tag">2020</span><span>Identification of QPO Frequency of GRS 1915+105 as the Relativistic Dynamic Frequency of a Truncated Accretion Disk, <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889L..36M/abstract" target="_blank"><i>ApJL</i>, 889L, 36</a></span></li>
+        <li><span class="year-tag">2019</span><span>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915+105 Using AstroSat, <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...870....4R/abstract" target="_blank"><i>ApJ</i>, 870, 4</a></span></li>
+        <li><span class="year-tag">2018</span><span>Extensive Broadband X-Ray Monitoring During the Formation of a Giant Radio Jet Base in Cyg X-3 with AstroSat, <a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...853L..11P/abstract" target="_blank"><i>ApJL</i>, 853, 11</a></span></li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3>Non-refereed / Conference Proceedings</h3>
+      <ul class="plain-list">
+        <li>Exploring the origin of type-C Quasi-periodic Oscillations in black hole X-ray binaries, MAXI J1535-571 and H 1743-322 &mdash; COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Polarimetric Findings for the Black Hole X-ray Binary 4U 1630-47 using Imaging X-ray Polarimetry Explorer &mdash; COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Soft Spectro-polarimetry of X-ray Binaries LMC X-3 and Her X-1: IXPE Insights and Future Prospects with XpoSat &mdash; COSPAR-2024 Assembly, Busan, South Korea</li>
+        <li>Study of comptonizing medium of BHXRB MAXI J1535&minus;571 using time-dependent comptonization model &mdash; COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Corona evolution of MAXI J1535-571 revealed by type-C quasi-periodic oscillations observed with Insight-HXMT &mdash; COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Probing the heartbeat state of GRS 1915+105 with time-resolved spectroscopy using AstroSat &mdash; COSPAR-2022 Assembly, Athens, Greece</li>
+        <li>Rms-spectra study of Low-frequency QPOs in Black hole binary systems using NICER &mdash; COSPAR-2021 Assembly, Sydney, Australia</li>
+        <li>Identification of Quasi-Periodic Oscillations of a black hole system &mdash; COSPAR-2021 Assembly, Sydney, Australia</li>
+        <li>Study of Timing Evolution from Nonvariable to Structured Large-amplitude Variability Transition in GRS 1915+105 Using AstroSat/LAXPC &mdash; COSPAR-2018 Assembly, Pasadena</li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3>Non-Scientific Conference Proceedings</h3>
+      <ul class="plain-list">
+        <li>My experience with COSPAR Capacity Building and COSPAR visiting fellowship &mdash; COSPAR-2021 Assembly, Sydney, Australia</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <div class="eyebrow">Current Work</div>
+      <h2>Projects</h2>
+    </div>
+    <div class="content-block">
+      <h3>Research Interests</h3>
+      <p>My research interests include the study of accretion disks in compact objects, the investigation of relativistic jets and their relationship with the accretion disk, accretion geometry, and quasi-periodic oscillations and their connection to accretion, corona, and disk instability. I have utilized observations from X-ray observatories such as AstroSat, NICER, Swift, NuSTAR, and IXPE for my research, working with data analysis software including HEASoft, the LAXPC pipeline, the SXT pipeline, NICERDAS, GHATS (General High-Energy Aperiodic Timing Software), and NuSTARDAS.</p>
+    </div>
+
+    <div class="content-block">
+      <h3>XMM-Newton Serendipitous Source Catalogue &amp; Cross-matching Pipeline</h3>
+      <p>At the Observatoire Astronomique de Strasbourg, I contribute to updating the XCat-DB interface, which hosts all sources in the XMM archive catalogue, drawn from more than 200 catalogues held primarily at CDS (Strasbourg Astronomical Data Center). Building on this, I developed an automated workflow for spectral energy distributions (SEDs): generating Multi-Order Coverage (MOC) maps from exposure maps, cross-matching the resulting sources, and producing SEDs for stacked observations. The cross-matching is performed using the Astronomical Resource Cross-matching for High Energy Studies (ARCHES), hosted in Strasbourg, to identify multi-wavelength counterparts in collaboration with CDS facilities such as SIMBAD and NED.</p>
+      <p>This pipeline directly supports Strasbourg's role in official XMM-Newton interfaces and data subsystems, which cover data extraction, catalogue production, and cross-identification. I have contributed to production of the 5XMM catalogue &mdash; performing systematic screening of 20% of the total stacked datasets, in collaboration with Natalie Webb (IRAP, Toulouse), to identify background and instrumental artefacts that could compromise detection reliability. The resulting catalogue expands the X-ray source population by &sim;40% compared to 4XMM-DR14, making it the largest collection of X-ray sources to date and a premier archive for population studies and searches for extreme objects. The catalogue draft paper, currently under review, is available <a href="http://xmmssc.irap.omp.eu/Catalogue/5XMM-DR15/5XMMdraft.pdf" target="_blank">here</a>, and the catalogue itself is available on the <a href="http://xmmssc.irap.omp.eu/Catalogue/5XMM-DR15/5XMM_DR15.html" target="_blank">IRAP webpage</a>.</p>
+    </div>
+  </section>
+
+  <section id="collaborations">
+    <div class="section-head">
+      <div class="eyebrow">Affiliations</div>
+      <h2>Scientific Collaborations &amp; Mission Memberships</h2>
+    </div>
+    <ul class="info-list">
+      <li>Affiliate scientist of the SVOM mission and member of the Science Working Group on X-ray binaries (2025&ndash;present).</li>
+      <li>Member of Science Working Group 4 (Compact Objects) of the NewAthena mission (2025&ndash;present).</li>
+      <li>Contributing member of the XMM-Newton Science Survey Center (SSC) Consortium (2023&ndash;present).</li>
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <div class="section-head">
+      <div class="eyebrow">Academic Service</div>
+      <h2>Teaching Experience</h2>
+    </div>
+    <ul class="info-list">
+      <li>Qualified for Ma&icirc;tre de Conf&eacute;rences &ndash; CNU Section 34 (Astronomy &amp; Astrophysics), March 2026.</li>
+      <li>Teaching Assistant for PHY337, High Energy Astrophysics of Binary Star Systems (PhD level), 2020.</li>
+      <li>Teaching Assistant for PHY305, Physics of the Universe (B.Tech/MSc level), 2018.</li>
+      <li>Teaching Assistant for PHY101A and PHY101B (B.Tech level), four semesters, 2017&ndash;2018.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <div class="section-head">
+      <div class="eyebrow">Field Notes</div>
+      <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery-sub">Where Research Has Taken Me</div>
+    <div class="gallery">
+      <figure>
+        <img src="Gsfc.jpg" alt="Visited Institute 1" />
+        <figcaption>NASA&rsquo;s Goddard Space Flight Center (GSFC), USA</figcaption>
+      </figure>
+      <figure>
+        <img src="caltech.jpg" alt="Visited Institute 2" />
+        <figcaption>California Institute of Technology (Caltech), USA</figcaption>
+      </figure>
+      <figure>
+        <img src="crete.jpg" alt="Visited Institute 3" />
+        <figcaption>Foundation for Research and Technology (FORTH), Greece</figcaption>
+      </figure>
+    </div>
+
+    <div class="gallery-sub">Conferences</div>
+    <div class="gallery">
+      <figure>
+        <img src="Cospar2022.jpg" alt="COSPAR 2022" />
         <figcaption>COSPAR 2022, Greece</figcaption>
-     </figure>
-     <figure>
-
+      </figure>
+      <figure>
         <img src="XMM_2024.jpg" alt="XMM2ATHENA" />
         <figcaption>XMM2ATHENA 2024, France</figcaption>
-     </figure>
-     <figure>
-
-        <img src="Vasto_group.jpg" alt="XMM2ATHENA" />
+      </figure>
+      <figure>
+        <img src="Vasto_group.jpg" alt="VAM 2025" />
         <figcaption>VAM 2025, Italy</figcaption>
-     </figure>   
-         <figure>
-    <img src="microqusar2.jpg" alt="Visited Institute 3" />
-    <figcaption>Crete, Italy</figcaption>
-    </figure>
-       <figure>
-    <img src="microquasar.JPG" alt="Visited Institute 3" />
-    <figcaption>The 11th Microquasar Workshop</figcaption>
-    </figure>
-  
-       
-      </div>
+      </figure>
+      <figure>
+        <img src="microqusar2.jpg" alt="Crete workshop" />
+        <figcaption>Crete, Italy</figcaption>
+      </figure>
+      <figure>
+        <img src="microquasar.JPG" alt="Microquasar Workshop" />
+        <figcaption>The 11th Microquasar Workshop</figcaption>
+      </figure>
+    </div>
+  </section>
 
-     
-    </section>
-    <section id="appearances">
-  <h2>Appearances in Popular Media</h2>
-  <p>Links to appearances of our research work in the popular media:</p>
-  <ul>
-    <li>
-      <a href="https://indianexpress.com/article/technology/science/scientists-identify-origin-of-x-ray-variability-in-black-hole-systems-6232632/" target="_blank" style="color: #00bcd4;">The Indian Express</a>
-    </li>
-    <li>
-      <a href="https://www.livehindustan.com/uttar-pradesh/story-scientists-of-iit-kanpur-achieved-great-success-on-black-hole-2978711.html?fbclid=IwAR0i2s23z0N-LTQeZVoSEBMXopx_ge-lzOBLNgg8TgvlQjwNWGWOI6o_3JU" target="_blank" style="color: #00bcd4;">Hindustan Times</a>
-    </li>
-    <li>
-      <a href="https://www.jagran.com/uttar-pradesh/kanpur-city-how-fast-the-black-hole-is-swallowing-the-universe-india-will-tell-19975447.html" target="_blank" style="color: #00bcd4;">Dainik Jagran</a>
-    </li>
-  </ul>
-</section>
+  <section id="appearances">
+    <div class="section-head">
+      <div class="eyebrow">Outreach</div>
+      <h2>Appearances in Popular Media</h2>
+    </div>
+    <p>Links to appearances of our research work in the popular media:</p>
+    <ul class="media-list">
+      <li><a href="https://indianexpress.com/article/technology/science/scientists-identify-origin-of-x-ray-variability-in-black-hole-systems-6232632/" target="_blank">The Indian Express</a></li>
+      <li><a href="https://www.livehindustan.com/uttar-pradesh/story-scientists-of-iit-kanpur-achieved-great-success-on-black-hole-2978711.html?fbclid=IwAR0i2s23z0N-LTQeZVoSEBMXopx_ge-lzOBLNgg8TgvlQjwNWGWOI6o_3JU" target="_blank">Hindustan Times</a></li>
+      <li><a href="https://www.jagran.com/uttar-pradesh/kanpur-city-how-fast-the-black-hole-is-swallowing-the-universe-india-will-tell-19975447.html" target="_blank">Dainik Jagran</a></li>
+    </ul>
+  </section>
 
-    
+  <footer>
+    &copy; 2026 Divya Rawat &middot; Strasbourg, France
+  </footer>
+</div>
 
-    <footer>
-      &copy; 2025 Divya Rawat
-    </footer>
-  </div>
 </body>
 </html>
-
-
